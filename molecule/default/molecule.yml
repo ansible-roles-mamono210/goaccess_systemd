@@ -1,0 +1,30 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: delegated
+platforms:
+  - name: goaccess
+    image: ${MOLECULE_IMAGE}
+    networks: molecule_goaccess
+  - name: selenium
+    image: selenium/standalone-firefox:latest
+    networks: molecule_goaccess
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      callbacks_enabled: ansible.posix.profile_tasks
+verifier:
+  name: ansible
+scenario:
+  test_sequence:
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - side_effect
+    - converge
+    - idempotence
+    - verify
+    - destroy

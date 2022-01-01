@@ -1,0 +1,22 @@
+---
+- name: Create systemd service file
+  ansible.builtin.template:
+    src: goaccess.service
+    dest: /usr/lib/systemd/system/goaccess.service
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create ExecStart file
+  ansible.builtin.template:
+    src: goaccess.sh
+    dest: /usr/lib/systemd/system/goaccess.sh
+    owner: root
+    group: root
+    mode: '0755'
+
+- name: Run GoAccess as daemon
+  ansible.builtin.systemd:
+    name: goaccess.service
+    state: started
+    enabled: yes

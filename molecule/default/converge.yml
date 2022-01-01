@@ -1,0 +1,11 @@
+---
+- name: Converge
+  hosts: goaccess
+  connection: docker
+  become: true
+  vars:
+    ansible_user: ansible
+  roles:
+    - geerlingguy.repo-epel
+    - mamono210.goaccess_install
+    - goaccess_systemd

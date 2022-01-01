@@ -1,0 +1,9 @@
+---
+- name: Prepare
+  hosts: goaccess
+  connection: docker
+  become: true
+  vars:
+    ansible_user: ansible
+  roles:
+    - mamono210.httpd_install

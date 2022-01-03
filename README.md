@@ -1,4 +1,4 @@
-[![](https://github.com/ansible-roles-mamono210/goaccess_systemd/workflows/build/badge.svg)](https://github.com/ansible-roles-mamono210/goaccess_sytemd/actions?query=workflow%3Abuild)
+[![](https://github.com/ansible-roles-mamono210/goaccess_systemd/workflows/build/badge.svg)](https://github.com/ansible-roles-mamono210/goaccess_systemd/actions?query=workflow%3Abuild)
 
 Role Description
 =========

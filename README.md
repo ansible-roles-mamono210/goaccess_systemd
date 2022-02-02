@@ -3,7 +3,7 @@
 Role Description
 =========
 
-Daemonize [GoAccess](https://goaccess.io) for CentOS8.
+Daemonize [GoAccess](https://goaccess.io) for CentOS Stream 8.
 
 Requirements
 ------------

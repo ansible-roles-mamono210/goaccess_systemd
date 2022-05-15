@@ -1,5 +1,4 @@
 [![CircleCI](https://circleci.com/gh/ansible-roles-mamono210/goaccess_systemd/tree/main.svg?style=svg)](https://circleci.com/gh/ansible-roles-mamono210/goaccess_systemd/tree/main)
-[![](https://github.com/ansible-roles-mamono210/goaccess_systemd/workflows/build/badge.svg)](https://github.com/ansible-roles-mamono210/goaccess_systemd/actions?query=workflow%3Abuild)
 
 Role Description
 =========

@@ -6,6 +6,6 @@
   vars:
     ansible_user: ansible
   roles:
-    - geerlingguy.repo-epel
+    - mamono210.epel
     - mamono210.goaccess_install
     - goaccess_systemd

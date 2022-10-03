@@ -10,5 +10,5 @@ galaxy_info:
   role_name: goaccess_systemd
   platforms:
     - name: EL
-      versions:
+      release:
         - 8

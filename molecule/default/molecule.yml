@@ -7,18 +7,18 @@ platforms:
   - name: ${PLATFORM_NAME}
     image_name: ${AMI_NAME}
     image_owner: ${AMI_OWNER_ID}
-    instance_type: "t2.medium"
+    instance_type: ${INSTANCE_TYPE}
     keypair_name: ${KEYPAIR_NAME}
     keypair_path: "/home/circleci/id_rsa"
     security_group_name: ${SECURITY_GROUP_NAME}
     security_group_rules:
       - proto: tcp
-        from_port: 80
-        to_port: 80
-        cidr_ip: 0.0.0.0/0
-      - proto: tcp
         from_port: 22
         to_port: 22
+        cidr_ip: 0.0.0.0/0
+      - proto: tcp
+        from_port: 80
+        to_port: 80
         cidr_ip: 0.0.0.0/0
     security_group_rules_egress:
       - proto: -1

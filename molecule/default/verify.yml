@@ -1,0 +1,23 @@
+---
+- name: Verify
+  gather_facts: false
+  hosts: all
+
+  tasks:
+    - name: Check whether GoAccess is installed
+      ansible.builtin.command: goaccess --version
+      register: goaccess_install
+      changed_when: false
+
+    - name: Check OS version
+      ansible.builtin.command: cat /etc/redhat-release
+      register: os_version
+      changed_when: false
+
+    - name: Make sure GoAccess is installed
+      ansible.builtin.debug:
+        var: goaccess_install
+
+    - name: Show OS version
+      ansible.builtin.debug:
+        var: os_version

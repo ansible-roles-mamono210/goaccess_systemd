@@ -6,5 +6,3 @@ roles:
     src: https://github.com/ansible-roles-mamono210/goaccess_install.git
   - name: mamono210.httpd_install
     src: https://github.com/ansible-roles-mamono210/httpd_install.git
-  - name: mamono210.molecule_ec2_driver
-    src: https://github.com/ansible-roles-mamono210/molecule_ec2_driver.git

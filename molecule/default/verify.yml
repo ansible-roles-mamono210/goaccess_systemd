@@ -1,22 +1,27 @@
 ---
 - name: Verify
   gather_facts: false
-  hosts: all
+  hosts: localhost
 
   tasks:
-    - name: Check whether GoAccess is installed
-      ansible.builtin.command: goaccess --version
-      register: goaccess_install
+    - name: Execute selenium
+      ansible.builtin.command:
+        cmd: python screenshot.py
+      args:
+        chdir: files
       changed_when: false
+      delegate_to: localhost
 
     - name: Check OS version
-      ansible.builtin.command: cat /etc/redhat-release
-      register: os_version
+      ansible.builtin.command:
+        cmd: cat /etc/redhat-release
+      become: yes
       changed_when: false
-
-    - name: Make sure GoAccess is installed
-      ansible.builtin.debug:
-        var: goaccess_install
+      delegate_to: goaccess
+      connection: docker
+      register: os_version
+      vars:
+        ansible_user: ansible
 
     - name: Show OS version
       ansible.builtin.debug:

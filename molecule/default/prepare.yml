@@ -1,15 +1,11 @@
 ---
 - name: Prepare
-  hosts: all
+  hosts: goaccess
+  connection: docker
   become: true
-
+  vars:
+    ansible_user: ansible
   roles:
     - mamono210.httpd_install
     - mamono210.epel
     - mamono210.goaccess_install
-
-  tasks:
-    - name: Put SELinux in permissive mode.
-      ansible.posix.selinux:
-        policy: targeted
-        state: permissive

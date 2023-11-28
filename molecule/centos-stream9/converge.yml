@@ -4,6 +4,6 @@
   connection: docker
   become: true
   vars:
-    ansible_user: ansible
+    ansible_user: circleci
   roles:
     - goaccess_systemd

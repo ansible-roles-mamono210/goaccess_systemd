@@ -19,9 +19,6 @@ jobs:
     parameters:
       checkout-path:
         type: string
-      molecule-scenario-name:
-        type: string
-        default: default
       molecule-test-image:
         type: string
     steps:
@@ -36,11 +33,11 @@ jobs:
           name: Test with Molecule
           command: |
             cd << parameters.checkout-path >>
-            molecule test --scenario-name << parameters.molecule-scenario-name >>
+            molecule test --scenario-name << parameters.molecule-test-image  >>
           environment:
             PY_COLORS: '1'
             ANSIBLE_FORCE_COLOR: '1'
-            MOLECULE_IMAGE: "<< parameters.molecule-test-image >>"
+            MOLECULE_IMAGE: "ghcr.io/docker-images-mamono210/ansible-test/<< parameters.molecule-test-image >>:latst"
       - store_artifacts:
           path: << parameters.checkout-path >>/molecule/default/files/screenshot.png
           destination: screenshot.png
@@ -86,7 +83,7 @@ workflows:
               checkout-path:
                 - 'goaccess_systemd'
               molecule-test-image:
-                - 'ghcr.io/docker-images-mamono210/ansible-test/centos-stream8:latest'
-                - 'ghcr.io/docker-images-mamono210/ansible-test/centos-stream9:latest'
+                - 'centos-stream8'
+                - 'centos-stream9'
           requires:
             - ansible-lint

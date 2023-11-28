@@ -1,0 +1,9 @@
+---
+- name: Converge
+  hosts: goaccess
+  connection: docker
+  become: true
+  vars:
+    ansible_user: ansible
+  roles:
+    - goaccess_systemd

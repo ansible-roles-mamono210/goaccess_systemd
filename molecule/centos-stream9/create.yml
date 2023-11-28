@@ -17,8 +17,6 @@
         name: "{{ molecule_platforms.0.name }}"
         command: /sbin/init
         detach: yes
-        healthcheck:
-          test: ["CMD", "/usr/sbin/init"]
         image: "{{ molecule_platforms.0.image }}"
         networks:
           - name: "{{ molecule_platforms.0.networks }}"

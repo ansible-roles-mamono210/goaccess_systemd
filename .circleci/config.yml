@@ -37,6 +37,7 @@ jobs:
           environment:
             PY_COLORS: '1'
             ANSIBLE_FORCE_COLOR: '1'
+            ANSIBLE_REMOTE_TEMP: '/tmp/.ansible/tmp'
             MOLECULE_IMAGE: "ghcr.io/docker-images-mamono210/ansible-test/<< parameters.molecule-test-image >>:latest"
       - store_artifacts:
           path: << parameters.checkout-path >>/molecule/<< parameters.molecule-test-image >>/files/screenshot.png

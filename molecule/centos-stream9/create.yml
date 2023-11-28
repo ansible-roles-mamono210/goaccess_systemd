@@ -26,7 +26,7 @@
         state: started
         tty: yes
         volumes:
-          - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+          - '/sys/fs/cgroup:/sys/fs/cgroup:rw'
 
     - name: Setup Selenium container
       community.docker.docker_container:

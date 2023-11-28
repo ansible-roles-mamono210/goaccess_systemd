@@ -39,7 +39,7 @@ jobs:
             ANSIBLE_FORCE_COLOR: '1'
             MOLECULE_IMAGE: "ghcr.io/docker-images-mamono210/ansible-test/<< parameters.molecule-test-image >>:latest"
       - store_artifacts:
-          path: << parameters.checkout-path >>/molecule/default/files/screenshot.png
+          path: << parameters.checkout-path >>/molecule/<< parameters.molecule-test-image >>/files/screenshot.png
           destination: screenshot.png
       - run:
           name: Show Ansible version

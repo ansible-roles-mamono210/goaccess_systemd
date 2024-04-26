@@ -2,7 +2,7 @@
 dependency:
   name: galaxy
 driver:
-  name: delegated
+  name: default
 platforms:
   - name: ${PLATFORM_NAME}
     image_name: ${AMI_NAME}

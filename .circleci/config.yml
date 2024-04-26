@@ -42,6 +42,9 @@ jobs:
           role-arn: ${AWS_ROLE_ARN}
           role-session-name: << parameters.aws-resource-name >>
           session-duration: '2100'
+      - run:
+          name: Install Ansible roles
+          command: ansible-galaxy install -r molecule/<< parameters.molecule-scenario-name >>/requirements.yml
       - molecule-ec2/execute:
           ansible-user: << parameters.ansible-user >>
           aws-ami-name: << parameters.aws-ami-name >>
